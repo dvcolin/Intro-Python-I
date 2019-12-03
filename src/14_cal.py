@@ -22,3 +22,31 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+current_year = datetime.now().year
+current_month = datetime.now().month
+
+user_input = input(
+    'Enter month and year (optional) separated by a space: ').split(' ')
+
+
+def generate_calendar(ui):
+    if len(ui) == 1 and ui[0] == '':
+        print(calendar.month(current_year, current_month))
+    elif len(ui) == 1:
+        try:
+            monthInt = int(ui[0])
+            print(calendar.month(2019, monthInt))
+        except ValueError:
+            print('Only numbers can be entered.')
+
+    elif len(ui) == 2:
+        try:
+            monthInt = int(ui[0])
+            yearInt = int(ui[1])
+            print(calendar.month(yearInt, monthInt))
+        except ValueError:
+            print('Only numbers can be entered.')
+
+
+generate_calendar(user_input)
