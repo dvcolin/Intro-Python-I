@@ -47,6 +47,8 @@ def generate_calendar(ui):
             print(calendar.month(yearInt, monthInt))
         except ValueError:
             print('Only numbers can be entered.')
+    else:
+        print('Only accepts two arguments.')
 
 
 generate_calendar(user_input)
